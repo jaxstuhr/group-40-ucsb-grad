@@ -15,13 +15,18 @@ library(here)
 # read in UCSB grad data
 ucsb_grad = read_csv(here("data", "ucsb_grad_data.csv"))
 ```
+
 ```{r}
 # create ggplot with geom_col
 ggplot(data = ucsb_grad, 
        aes(x = year_abbr, y = domestic_enrollment)) +
   geom_col(aes(fill = ethnicity), position = "fill") + 
-  labs(x = "Year", y = "Domestic Enrollment [Proportion]")
+  labs(x = "Year", 
+       y = "Domestic Enrollment [Proportion]",
+       title = "Annual Domestic Enrollment of Different Ethnicities at UCSB") +
+  theme_minimal()
 ```
+**Figure 1** Annual proportional domestic enrollment from 2008 to 2019 at the University of California, Santa Barbara (UCSB) of different ethnic groups
 
 
 
