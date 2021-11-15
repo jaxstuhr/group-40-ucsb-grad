@@ -15,5 +15,15 @@ library(here)
 # read in UCSB grad data
 ucsb_grad = read_csv(here("data", "ucsb_grad_data.csv"))
 ```
+```{r}
+# create ggplot with geom_col
+ggplot(data = ucsb_grad, 
+       aes(x = year_abbr, y = domestic_enrollment)) +
+  geom_col(aes(fill = ethnicity))
+```
+
+
+
+
 
 
