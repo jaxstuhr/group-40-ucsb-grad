@@ -5,8 +5,8 @@ date: "11/15/2021"
 output: html_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+```{r setup, include=FALSE, message=FALSE, warning=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
 library(tidyverse)
 library(here)
 ```
@@ -21,6 +21,7 @@ ucsb_grad = read_csv(here("data", "ucsb_grad_data.csv"))
 ggplot(data = ucsb_grad, 
        aes(x = year_abbr, y = domestic_enrollment)) +
   geom_col(aes(fill = ethnicity), position = "fill") + 
+  # add labels
   labs(x = "Year", 
        y = "Domestic Enrollment [Proportion]",
        title = "Annual Domestic Enrollment of Different Ethnicities at UCSB") +
